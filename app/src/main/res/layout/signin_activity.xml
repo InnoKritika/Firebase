@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:background="#930133"
+    android:layout_height="match_parent">
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/et_user_name1"
+        android:hint="Phone Number"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/mazenta"
+        app:errorTextColor="@color/mazenta"
+        android:layout_margin="5dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/et_password1"
+        android:hint="Password"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/mazenta"
+        app:errorTextColor="@color/mazenta"
+        android:layout_margin="5dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/btn_sign_in"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Sign-in"
+        android:backgroundTint="@color/white"
+        android:clickable="true"
+        android:textColor="@color/mazenta"
+        android:layout_marginTop="50dp" />
+    <Button
+        android:id="@+id/btn_new_user"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="@string/new_user"
+        android:backgroundTint="#FA950E3C"
+
+        android:elevation="50dp" />
+
+</LinearLayout>
