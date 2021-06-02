@@ -6,13 +6,23 @@ public class User {
     String email;
     String phoneNumber;
     String password;
+    String uid;
 
-    public User(String fullName, String username, String email, String phoneNumber, String password) {
+    public User(String fullName, String username, String email, String phoneNumber, String password,String uid) {
         this.fullName = fullName;
         this.username = username;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.password = password;
+        this.uid = uid;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
     public String getFullName() {

@@ -39,8 +39,7 @@ public class AddingImageActivity extends AppCompatActivity {
     Button uploadButton,viewImage;
     private Uri imageUri;
     String category;
-    TextView selectedCategory;
-    private DatabaseReference reference = FirebaseDatabase.getInstance().getReference("categories");
+    private DatabaseReference reference = FirebaseDatabase.getInstance().getReference("images");
     private StorageReference storageReference = FirebaseStorage.getInstance().getReference();
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -16,8 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class RegistrationActivity extends AppCompatActivity {
     TextInputLayout fullName, username, email, phoneNumber, password;
     Button register, login;
-    FirebaseDatabase database;
-    DatabaseReference myRef;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -124,17 +123,17 @@ public class RegistrationActivity extends AppCompatActivity {
                 if (!validateName() | !validateEmail() | !validatePassword() | !validatePhone() | !validateUsername())
                     return;
 
-                database = FirebaseDatabase.getInstance();
-                myRef = database.getReference("users");
+                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
 
                 String name = fullName.getEditText().getText().toString();
                 String userName = username.getEditText().getText().toString();
                 String e_mail = email.getEditText().getText().toString();
                 String number = phoneNumber.getEditText().getText().toString();
                 String pass = password.getEditText().getText().toString();
+                String uid = reference.push().getKey();
 
-                User user = new User(name, userName, e_mail, number, pass);
-                myRef.child(number).setValue(user);
+                User user = new User(name, userName, e_mail, number, pass,uid);
+                reference.child(number).setValue(user);
 
                 Intent in = new Intent(RegistrationActivity.this,UserProfileActivity.class);
                 startActivity(in);
